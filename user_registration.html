@@ -1,0 +1,97 @@
+<!-- index.html -->
+<html>
+<head>
+    <title>User Registration</title>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var phoneRegex = /^\d{10}$/;
+            var zipRegex = /^\d{5}$/;
+
+            if (password.length < 8 || password.length > 12) {
+                alert("Password must be between 8 and 12 characters");
+                return false;
+            }
+            if (!password.match(/[a-z]/) || !password.match(/[A-Z]/) || !password.match(/[0-9]/) || !password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) {
+                alert("Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            if (!document.getElementById("phone").value.match(phoneRegex)) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+            if (!document.getElementById("zipcode").value.match(zipRegex)) {
+                alert("Please enter a valid 5-digit ZIP code");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2 align="center">User Registration</h2>
+    <form action="/register" method="post" onsubmit="return validateForm()">
+		<table align="center">
+			<tr>
+				<td><label for="username">Username:</label></td>
+				<td><input type="text" id="username" name="username" required></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password:</label></td>
+				<td><input type="password" id="password" name="password" required></td>
+			</tr>
+			<tr>
+				<td><label for="confirmPassword">Confirm Password:</label></td>
+				<td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+			</tr>
+			<tr>
+				<td><label for="firstname">First Name:</label></td>
+				<td><input type="text" id="firstname" name="firstname" required></td>
+			<tr>	
+				<td><label for="lastname">Last Name:</label></td>
+				<td><input type="text" id="lastname" name="lastname" required></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email:</label></td>
+				<td><input type="email" id="email" name="email" required></td>
+			</tr>
+			<tr>
+				<td><label for="phone">Phone Number:</label></td>
+				<td><input type="text" id="phone" name="phone" required></td>
+			</tr>
+			<tr>
+				<td><label for="address1">Address Line 1:</label></td>
+				<td><input type="text" id="address1" name="address1" required></td>
+			</tr>
+			<tr>
+				<td><label for="address2">Address Line 2:</label></td>
+				<td><input type="text" id="address2" name="address2"></td>
+			</tr>
+			<tr>
+				<td><label for="city">City:</label></td>
+				<td><input type="text" id="city" name="city" required></td>
+			</tr>
+			<tr>
+				<td><label for="state">State:</label></td>
+				<td><input type="text" id="state" name="state" required></td>
+			</tr>
+			<tr>
+				<td><label for="zipcode">ZIP Code:</label></td>
+				<td><input type="text" id="zipcode" name="zipcode" required></td>
+			</tr>
+			<tr>
+				<td><label for="officePhone">Office Phone:</label></td>
+				<td><input type="text" id="officePhone" name="officePhone"></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Register</button></td>
+				<td><button type="reset">Cancel</button></td>
+			</tr>
+    </form>
+</body>
+</html>

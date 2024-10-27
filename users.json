@@ -1,0 +1,29 @@
+{
+   "user1" : {
+      "name" : "mahesh",
+      "address" : "noida",
+      "profession" : "teacher",
+      "id": 1
+   },
+   
+   "user2" : {
+      "name" : "suresh",
+      "address" : "gurgaon",
+      "profession" : "librarian",
+      "id": 2
+   },
+   
+   "user3" : {
+      "name" : "ramesh",
+      "address" : "delhi",
+      "profession" : "clerk",
+      "id": 3
+   },
+   
+   "user4" : {
+      "name" : "rajesh",
+      "address" : "bengaluru",
+      "profession" : "cashier",
+      "id": 3
+   }
+}
